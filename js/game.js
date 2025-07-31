@@ -20,7 +20,7 @@ class Game {
     this.isSubGame = false;
     this.round = 0;
     this.gameTarget = [10, 20, 40, 70];
-    this.time = 5;
+    this.time = 60;
   }
 
   start() {
@@ -138,10 +138,10 @@ class Game {
 
   subGame() {
     if (
-      this.score === 1 ||
-      this.score === 2 ||
-      this.score === 3 ||
-      this.score === 4 ||
+      this.score === 10 ||
+      this.score === 20 ||
+      this.score === 40 ||
+      this.score === 70 ||
       (this.round === 4 && this.lives > 0 && this.time === 0)
     ) {
       clearInterval(this.fruitTimer);
@@ -258,6 +258,6 @@ class Game {
     document.querySelector(".platforms").innerHTML = "";
     this.platform = [];
     this.fruits = [];
-    this.time = 5;
+    this.time = 60;
   }
 }
