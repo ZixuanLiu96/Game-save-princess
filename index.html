@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <title>game</title>
+  </head>
+  <body>
+    <div class="game-start">
+      <div class="game-text">
+        <h1>Save Your Princess</h1>
+      </div>
+      <div class="game-btns" hidden>
+        <button class="start-btn">🍎 Start Game</button>
+        <button class="instruction-btn">How to Play</button>
+      </div>
+    </div>
+
+    <div class="instruction" hidden>
+      <p>
+        In this game, you need to control the animals to obtain food by moving
+        the keyboard up, down, left, and right to help the princess cross the
+        river successfully.
+      </p>
+      <p>
+        Every time you get enough fruits, you can help the princess build a
+        platform. You need to build about 5 platforms.
+      </p>
+      <p>
+        ⚠️ Note: You have 3 lives in total. You will lose a life every time you
+        touch a skull.
+      </p>
+      <button class="back-btn">back</button>
+    </div>
+
+    <div class="game-screen" hidden>
+      <div class="score-box">
+        <h3 class="level">Level: <span>1</span></h3>
+        <div>
+          <h3 class="score">Score: <span>0</span></h3>
+        </div>
+        <div>
+          <h3 class="lives">Lives: <span>3</span></h3>
+        </div>
+        <h3 class="target">Next target: <span>10</span></h3>
+      </div>
+      <div class="sub-game" hidden>
+        <div class="subgame-alert">
+          <p>Congratulations! You can go to help your princess❤️</p>
+          <button class="save-btn">Go -&gt;</button>
+        </div>
+      </div>
+      <div class="back-game" hidden>
+        <button class="return-btn">&lt;- Back to game</button>
+      </div>
+      <div class="platforms" hidden></div>
+    </div>
+
+    <div class="game-over" hidden>
+      <h2>Game Over!</h2>
+      <p>Unfortunately, you failed saving your princess😭</p>
+      <p class="result">Score: 0</p>
+      <button class="restart-btn">Play Again</button>
+    </div>
+
+    <div class="game-win" hidden>
+      <p>🎉Congratulations! You've successfully saved your princess!❤️</p>
+      <button class="restart-btn">Play Again</button>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/fruits.js"></script>
+    <script type="text/javascript" src="./js/animal.js"></script>
+    <script type="text/javascript" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/platform.js"></script>
+    <script type="text/javascript" src="./js/princess.js"></script>
+  </body>
+</html>

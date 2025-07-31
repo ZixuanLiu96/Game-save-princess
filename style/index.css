@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Bitcount Grid Double", sans-serif;
+  background: url(../images/background.png) no-repeat;
+  background-size: auto;
+  background-position: top left;
+  /* width: 1440px; */
+  overflow: hidden;
+}
+
+.active {
+  display: block;
+}
+
+/* //////////game-start///////////// */
+
+.game-start,
+.instruction,
+.game-over,
+.sub-game,
+.back-game,
+.game-win {
+  padding: 20px;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 200px;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.game-text {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #f59f00;
+  position: relative;
+}
+
+.game-text::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url(../images/rabbit.png);
+  background-size: contain;
+  position: absolute;
+  top: -80px;
+  left: 40px;
+}
+
+.game-text::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background-image: url(../images/princess.png);
+  background-size: contain;
+  position: absolute;
+  top: 80px;
+  right: 10px;
+}
+
+.game-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  width: 400px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Bitcount Grid Double", sans-serif;
+  font-size: 21px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #fcc419;
+}
+
+/* //////////////instruction///////////// */
+.instruction {
+  font-size: 18px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.instruction p {
+  text-align: start;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.instruction .back-btn {
+  margin-top: 20px;
+  background: #fcc419;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.instruction .back-btn:hover {
+  background: #ffe066;
+}
+
+/* //////////////game-screen////////// */
+
+.score-box {
+  font-size: 18px;
+  font-weight: 300;
+  width: 170px;
+  background: #fff;
+  margin: 20px 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+}
+
+.target {
+  font-size: 16px;
+  color: #f59f00;
+}
+
+/* /////////////sub-game/////////////////// */
+.sub-game {
+  background: #fff;
+  margin-top: 50px;
+}
+
+.sub-game p {
+  font-size: 20px;
+}
+
+.sub-game button,
+.back-game button {
+  background: #f59f00;
+  margin-top: 20px;
+}
+.sub-game button:hover,
+.back-game button {
+  background: #fcc419;
+}
+
+.sub-game img {
+  width: cover;
+}
+
+.back-game {
+  margin-top: -30px;
+}
+
+/* /////////////////game-over///////////////// */
+.game-over {
+  background: #fff;
+  text-align: center;
+}
+
+.game-over h2 {
+  font-size: 36px;
+  color: #c92a2a;
+  margin-bottom: 20px;
+}
+
+.game-over p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.restart-btn {
+  background: #f59f00;
+}
+
+.game-over .restart-btn:hover {
+  background: #fcc419;
+}
+
+/* //////////////////game-win/////////////// */
+.game-win {
+  background: #fff;
+  font-size: 20px;
+}
+
+.game-win p {
+  margin: 20px;
+}
