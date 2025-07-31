@@ -26,6 +26,7 @@ class Fruits {
       "./images/skull.png",
       "./images/skull.png",
       "./images/skull.png",
+      "./images/skull.png",
     ];
     this.random = Math.floor(Math.random() * this.imgUrl.length);
     this.element.src = this.imgUrl[this.random];

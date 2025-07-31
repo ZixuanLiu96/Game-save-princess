@@ -20,7 +20,7 @@ class Game {
     this.isSubGame = false;
     this.round = 0;
     this.gameTarget = [10, 20, 40, 70];
-    this.time = 60;
+    this.time = 5;
   }
 
   start() {
@@ -129,8 +129,10 @@ class Game {
     if (this.gameIsOver) {
       this.gameScreen.style.display = "none";
       this.gameOver.style.display = "block";
-      clearInterval(this.skullTimer);
       document.querySelector(".result").innerHTML = `Score: ${this.score}`;
+      document.querySelector("#bg-music").pause();
+      document.querySelector("#bg-music").currentTime = 0;
+      document.querySelector("#game-over-sound").play();
     }
   }
 
@@ -174,9 +176,9 @@ class Game {
             this.gameWin.style.display = "block";
             this.gameScreen.style.display = "none";
           } else document.querySelector(".back-game").style.display = "block";
-        }, 800);
-      }, 800);
-    }, 800);
+        }, 1000);
+      }, 1000);
+    }, 1000);
   }
 
   skipSkull() {
@@ -238,6 +240,9 @@ class Game {
   win() {
     if (this.princess.left === 730) {
       this.isWin = true;
+      document.querySelector("#bg-music").pause();
+      document.querySelector("#bg-music").currentTime = 0;
+      document.querySelector("#game-win-sound").play();
       document.querySelector(".back-game").style.display = "none";
     }
   }
@@ -253,6 +258,6 @@ class Game {
     document.querySelector(".platforms").innerHTML = "";
     this.platform = [];
     this.fruits = [];
-    this.time = 60;
+    this.time = 5;
   }
 }

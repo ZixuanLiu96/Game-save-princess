@@ -5,7 +5,9 @@ window.onload = function () {
   const restarts = document.querySelectorAll(".restart-btn");
   const save = document.querySelector(".save-btn");
   const myReturn = document.querySelector(".return-btn");
-  const music = document.querySelector("#music");
+  const music = document.querySelector("#bg-music");
+  const gameOverSound = document.querySelector("#game-over-sound");
+  const gameWinSound = document.querySelector("#game-win-sound");
   const game = new Game();
 
   gameStartBtn.addEventListener("click", startGame);
@@ -26,10 +28,16 @@ window.onload = function () {
       document.querySelector(".game-start").style.display = "block";
       if (game.gameIsOver) {
         document.querySelector(".game-over").style.display = "none";
+        gameOverSound.pause();
+        gameOverSound.currentTime = 0;
+        music.play();
         game.end();
       } else if (game.isWin) {
         document.querySelector(".game-win").style.display = "none";
         game.end();
+        gameWinSound.pause();
+        gameWinSound.currentTime = 0;
+        music.play();
       }
     });
   });
