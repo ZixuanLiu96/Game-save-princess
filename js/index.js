@@ -5,6 +5,7 @@ window.onload = function () {
   const restarts = document.querySelectorAll(".restart-btn");
   const save = document.querySelector(".save-btn");
   const myReturn = document.querySelector(".return-btn");
+  const music = document.querySelector("#music");
   const game = new Game();
 
   gameStartBtn.addEventListener("click", startGame);
@@ -44,6 +45,7 @@ window.onload = function () {
   function startGame() {
     console.log("game start");
     game.start();
+    music.play();
   }
 
   function handleKeyDown(event) {

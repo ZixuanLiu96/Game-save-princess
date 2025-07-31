@@ -96,6 +96,7 @@ button:hover {
 .instruction {
   font-size: 18px;
   background: #fff;
+  margin-top: 60px;
   border-radius: 8px;
 }
 

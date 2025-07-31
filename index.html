@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/index.css" />
-    <title>game</title>
+    <title>Save Princess</title>
   </head>
   <body>
+    <audio id="music" src="./audio/bgmusic.mp3" loop hidden></audio>
     <div class="game-start">
       <div class="game-text">
         <h1>Save Your Princess</h1>
@@ -19,18 +20,25 @@
 
     <div class="instruction" hidden>
       <p>
-        In this game, you need to control the animals to obtain food by moving
-        the keyboard up, down, left, and right to help the princess cross the
-        river successfully.
+        In this game, you need to help the princess escape, but there is a river
+        blocking her way. You need to collect enough fruits to help the princess
+        cross the river step by step. Control the rabbit to obtain fruits by
+        moving the keyboard up, down, left, and right to help the princess cross
+        the river successfully.
       </p>
       <p>
-        Every time you get enough fruits, you can help the princess build a
-        platform. You need to build about 5 platforms.
+        ⚠️ Enter the game, the upper left corner of the screen will show the
+        number of fruits you need to collect in each round. You have a total of
+        3 lives. Every time you touch a skull, you will lose a life, but every
+        time you collect a grape, you will gain a life.
       </p>
       <p>
-        ⚠️ Note: You have 3 lives in total. You will lose a life every time you
-        touch a skull.
+        ⚠️ There are 5 levels in total. When you enter the fifth level, you no
+        longer need to collect any fruits. You need to avoid the skeletons
+        within 60 seconds. If you persist to the end, you will successfully help
+        the princess escape.
       </p>
+      <p>Good luck 🍀</p>
       <button class="back-btn">back</button>
     </div>
 
@@ -47,7 +55,7 @@
       </div>
       <div class="sub-game" hidden>
         <div class="subgame-alert">
-          <p>Congratulations! You can go to help your princess❤️</p>
+          <p>Congratulations! you have the chance to save the princess.❤️</p>
           <button class="save-btn">Go -&gt;</button>
         </div>
       </div>
@@ -59,13 +67,13 @@
 
     <div class="game-over" hidden>
       <h2>Game Over!</h2>
-      <p>Unfortunately, you failed saving your princess😭</p>
+      <p>Unfortunately, you failed to rescue the princess.😭</p>
       <p class="result">Score: 0</p>
       <button class="restart-btn">Play Again</button>
     </div>
 
     <div class="game-win" hidden>
-      <p>🎉Congratulations! You've successfully saved your princess!❤️</p>
+      <p>🎉Wow! You've successfully rescued the princess!❤️</p>
       <button class="restart-btn">Play Again</button>
     </div>
 

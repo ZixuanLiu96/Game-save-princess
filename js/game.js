@@ -13,7 +13,6 @@ class Game {
     this.score = 0;
     this.timeId;
     this.fruitTimer;
-    this.skullTimer;
     this.gameIsOver = false;
     this.isWin = false;
     this.gameLoopFrequency = 1000 / 60;
@@ -21,7 +20,7 @@ class Game {
     this.isSubGame = false;
     this.round = 0;
     this.gameTarget = [10, 20, 40, 70];
-    this.time = 30;
+    this.time = 60;
   }
 
   start() {
@@ -32,7 +31,7 @@ class Game {
     this.fruitFrequency = 800;
     this.round = 0;
     this.isWin = false;
-    clearInterval(this.skullTimer);
+
     console.log("platform", this.platform);
 
     document.querySelector(".lives").innerHTML = `Lives: ${this.lives}`;
@@ -144,7 +143,6 @@ class Game {
       (this.round === 4 && this.lives > 0 && this.time === 0)
     ) {
       clearInterval(this.fruitTimer);
-      clearInterval(this.skullTimer);
       document.querySelector(".sub-game").style.display = `block`;
       // console.log("subgame", this.animal.element);
       this.animal.element.style.display = "none";
@@ -182,13 +180,11 @@ class Game {
   }
 
   skipSkull() {
-    this.skullTimer = setInterval(() => {
+    this.fruitTimer = setInterval(() => {
       const fruit = new Fruits(this.gameScreen, this.round);
 
       if (fruit.imgUrl[fruit.random] === "./images/skull.png") {
-        console.log(111);
         this.fruits.push(fruit);
-
         fruit.move();
       } else fruit.element.remove();
     }, this.fruitFrequency);
@@ -208,9 +204,10 @@ class Game {
 
     // if (this.round > this.gameTarget.length - 1)
     if (this.round === 4)
-      document.querySelector(".target").innerHTML = `Time: 00:30`;
+      document.querySelector(".target").innerHTML = `Time: 00:${this.time}`;
     // game.fruits.forEach((fruit) => (fruit.element.style.display = "block"));
     this.fruitFrequency -= 150;
+    console.log(222222, this.fruitFrequency);
 
     if (this.round !== 4) {
       this.fruits = [];
@@ -220,9 +217,8 @@ class Game {
       console.log(this.round);
 
       this.fruits = [];
-      this.fruitFrequency += 150;
+      this.skipSkull();
       let timer = setInterval(() => {
-        this.skipSkull();
         this.time--;
         document.querySelector(".target").innerHTML =
           this.time > 9 ? `Time: 00:${this.time}` : `Time: 00:0${this.time}`;
@@ -249,7 +245,7 @@ class Game {
   end() {
     clearInterval(this.timeId);
     clearInterval(this.fruitTimer);
-    clearInterval(this.skullTimer);
+
     document.body.style.background = 'url("./images/background.png")';
     this.animal.element.remove();
     this.princess.element.remove();
@@ -257,5 +253,6 @@ class Game {
     document.querySelector(".platforms").innerHTML = "";
     this.platform = [];
     this.fruits = [];
+    this.time = 60;
   }
 }

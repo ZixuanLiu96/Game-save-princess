@@ -40,7 +40,7 @@ class Fruits {
   }
 
   move() {
-    this.top += this.round + 5;
+    this.top += this.round + 6;
 
     // console.log(this.top);
     this.updatePosition();
